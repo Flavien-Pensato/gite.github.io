@@ -1,0 +1,314 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Bitter', serif;
+}
+
+@font-face {
+  font-family: "Dancing Bold";
+  src: url("/fonts/dancing/bold.ttf");
+  font-display: swap;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+h1 {
+  font-family: Dancing Bold;
+  font-size: 32px;
+  margin: 1rem 0;
+  text-align: center;
+  color: #119DA4;
+}
+
+h2 {
+  line-height: 28px;
+  font-size: 28px;
+  margin: 1.5rem 0 1rem;
+}
+
+h3 {
+  line-height: 24px;
+  font-size: 24px;
+  margin: 1.5rem 0 1rem;
+}
+
+dd {
+  line-height: 16px;
+  font-size: 16px;
+}
+
+nav {
+  margin: 2rem 0 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (max-width: 420px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+      padding: 0.3rem 0;;
+    }
+  } 
+
+  a {
+    text-decoration: none;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    color: #13505B;
+    letter-spacing: 1px;
+  }
+}
+
+figure {
+  position: relative;
+  height: 100%;
+
+  img {
+    height: 100%;
+
+    @media (max-width: 420px) {
+      width: 100%;
+    }
+  }
+
+  figcaption {
+    padding: 20px;
+    color: white;
+
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+
+    @media (max-width: 420px) {
+      // opacity: 1;
+      bottom: 0px;
+      padding: 10px 5px;
+      background-color: rgba(0,0,0,0.3);
+    }
+  }
+}
+
+
+section#accueil {
+  height: calc(100vh - 64px - 32px - 16px);
+  min-height: calc(100vh - 64px - 32px - 16px);
+  width: 100%;
+  min-width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+
+  @media (max-width: 420px) {
+    padding: 0;  
+  }
+
+
+  figure {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  
+    figcaption {
+      padding: 20px;
+      color: white;
+  
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+  
+      border-radius: 8px;
+    }
+  }    
+  
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 30px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: white;
+
+    h2 {
+      font-size: 36px;
+      line-height: 36px;
+      margin: 1rem 0;
+    }
+  
+    font-size: 24px;
+    line-height: 24px;  
+  }
+}
+
+section#activites {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li { 
+      width: 50%;
+      list-style: none;
+      padding: 0.3rem 1rem;
+      
+      @media (max-width: 420px) {
+        width: 100%;
+      }
+    }
+  }
+
+  span {
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+}
+
+section#tarifs {
+  strong {
+    font-size: 18px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.overlay-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto;
+  background-color: black;
+  padding: 50px;
+
+  @media (max-width: 420px) {
+    padding: 0;
+  }
+
+  .button-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 2;
+  }
+
+  figure {
+    text-align: center;
+
+    @media (max-width: 420px) {
+      display: flex;
+    }
+
+    figcaption {
+      right: 0;
+      opacity: 1;
+    }
+
+    img {
+      width: auto;
+
+      @media (max-width: 420px) {
+        width: 100%;
+        height: auto;
+        margin: auto;
+      }
+    }
+  }
+}
+
+:target {
+  display: block;    
+  position: relative;     
+  top: -100px;
+  visibility: hidden;
+}
+
+@keyframes fade {
+  from {opacity: .6}
+  to {opacity: 1}
+}
+
+section#contact {
+  background-color: #13505b;
+  color: white;
+  margin-bottom: 0;
+  max-width: none;
+
+  & > div {
+    position: relative;
+    max-width: 54rem;
+    margin: auto;
+  }
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+
+  > div:nth-child(odd) {
+    padding-right: 20px;
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=tel] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  input[type=radio] {
+    margin: 0.8rem;
+  }
+
+  input[type=submit] {
+    font-size: 18px;
+    padding: 1rem;
+    border-radius: 4px;
+    color: white;
+    background-color: #119DA4;
+    max-width: 200px;
+  }
+
+
+  div {
+    margin: 1rem 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 420px) {
+      margin: 0.5rem 0;
+      width: 100%;
+    }
+  }
+}
+
+iframe {
+
+  @media (max-width: 420px) {
+    max-width: 100%;
+  } 
+}
