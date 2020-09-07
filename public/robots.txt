@@ -1,2 +1,3 @@
 User-agent: *
+Allow: /
 Sitemap: https://gite-github-io.vercel.app/
